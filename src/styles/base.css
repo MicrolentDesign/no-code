@@ -14,7 +14,8 @@
 
 html {
   -webkit-text-size-adjust: 100%;
-  scroll-behavior: smooth;
+  /* smooth scrolling is handled by Lenis (see src/hooks/useLenis.js);
+     native scroll-behavior is intentionally left out to avoid double-smoothing */
 }
 
 body {

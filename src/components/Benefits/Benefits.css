@@ -8,6 +8,22 @@
   isolation: isolate;
 }
 
+/* twinkling two-layer dot texture across the whole panel — distinct from
+   the uniform dot grids used elsewhere (varied size/opacity, offset layers) */
+.benefits__panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.16) 1px, transparent 1.4px),
+    radial-gradient(rgba(255, 255, 255, 0.24) 1.4px, transparent 1.8px);
+  background-size: 28px 28px, 64px 64px;
+  background-position: 0 0, 14px 20px;
+  -webkit-mask-image: radial-gradient(120% 100% at 15% 20%, #000 0%, transparent 65%);
+  mask-image: radial-gradient(120% 100% at 15% 20%, #000 0%, transparent 65%);
+}
+
 /* immersive background: faint globe + glow (light-theme stand-in for Ternic's Earth video) */
 .benefits__bg {
   position: absolute;

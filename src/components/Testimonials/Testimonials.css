@@ -1,13 +1,26 @@
 .tst__body {
   position: relative;
-  max-width: 760px;
+  isolation: isolate;
+  max-width: 800px;
   margin: clamp(2.2rem, 4vw, 3.2rem) auto 0;
   text-align: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow-lg);
+  padding: clamp(2.4rem, 5vw, 3.6rem) clamp(1.5rem, 4vw, 3rem) clamp(2rem, 4vw, 2.6rem);
+  overflow: hidden;
 }
 .tst__quote {
+  position: absolute;
+  top: 1.4rem;
+  left: 1.8rem;
+  z-index: 0;
   color: var(--brand-100);
-  display: block;
-  margin-bottom: -0.5rem;
+}
+.tst__content {
+  position: relative;
+  z-index: 1;
 }
 
 .tst__avatars {
@@ -23,14 +36,19 @@
   width: 78px;
   height: 78px;
   border-radius: 20px;
-  font-family: var(--font-head);
-  font-weight: 600;
-  font-size: 1.3rem;
+  overflow: hidden;
+  padding: 0;
   color: #fff;
   background: var(--grad-brand);
   opacity: 0.55;
   filter: grayscale(0.3);
-  transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+.tst__av img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .tst__av:nth-child(3n + 1) { background: linear-gradient(150deg, #3f78ff, #123f9c); }
 .tst__av:nth-child(3n + 2) { background: linear-gradient(150deg, #5a93ff, #1f55e6); }

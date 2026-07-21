@@ -32,48 +32,60 @@
   transform: rotate(6deg);
 }
 
+/* crossed line-grid texture, distinct from the dot patterns used elsewhere */
+.fcta__panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(46, 107, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(46, 107, 255, 0.08) 1px, transparent 1px);
+  background-size: 34px 34px;
+  -webkit-mask-image: radial-gradient(75% 70% at 50% 40%, #000 40%, transparent 82%);
+  mask-image: radial-gradient(75% 70% at 50% 40%, #000 40%, transparent 82%);
+}
+
 /* avatar cluster */
 .fcta__avatars {
   display: flex;
   margin-bottom: 1.6rem;
 }
 .fcta__av {
-  display: grid;
-  place-items: center;
+  display: block;
   width: 48px;
   height: 48px;
   border-radius: 50%;
+  overflow: hidden;
   margin-inline: -10px;
-  font-family: var(--font-head);
-  font-weight: 600;
-  color: #fff;
   border: 3px solid var(--surface);
   background: var(--grad-brand);
   box-shadow: var(--shadow-sm);
 }
+.fcta__av img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 .fcta__av:nth-child(1) {
-  background: linear-gradient(150deg, #5a93ff, #1f55e6);
   transform: translateY(12px) scale(0.84);
   z-index: 1;
 }
 .fcta__av:nth-child(2) {
-  background: linear-gradient(150deg, #3f78ff, #123f9c);
   transform: translateY(4px) scale(0.92);
   z-index: 2;
 }
 .fcta__av:nth-child(3) {
   width: 60px;
   height: 60px;
-  background: linear-gradient(150deg, #2e6bff, #0b1230);
   z-index: 3;
 }
 .fcta__av:nth-child(4) {
-  background: linear-gradient(150deg, #3f78ff, #123f9c);
   transform: translateY(4px) scale(0.92);
   z-index: 2;
 }
 .fcta__av:nth-child(5) {
-  background: linear-gradient(150deg, #5a93ff, #1f55e6);
   transform: translateY(12px) scale(0.84);
   z-index: 1;
 }

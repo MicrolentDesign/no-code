@@ -28,11 +28,15 @@
   transform: scaleX(0);
   background: var(--brand);
   border-radius: inherit;
+  /* smoothly eases back to 0 once the keyframe animation below stops applying */
+  transition: transform 0.3s ease;
 }
 .cslider__tab.is-active .cslider__tab-fill {
-  animation-name: fillbar;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
+  animation: fillbar linear forwards;
+  animation-duration: var(--dur, 6000ms);
+}
+.cslider.is-paused .cslider__tab.is-active .cslider__tab-fill {
+  animation-play-state: paused;
 }
 @keyframes fillbar {
   from { transform: scaleX(0); }
@@ -63,11 +67,13 @@
 }
 .cslider__text {
   position: relative;
-  animation: slidefade 0.5s ease;
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.28s ease, transform 0.28s ease;
 }
-@keyframes slidefade {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: none; }
+.cslider__text.is-out {
+  opacity: 0;
+  transform: translateY(8px);
 }
 .cslider__ic {
   display: grid;

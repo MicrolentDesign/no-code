@@ -59,14 +59,12 @@ export default function Integrations() {
             <span className="integ__center-glow" />
             <span className="integ__center-mark">
               <svg viewBox="0 0 32 32" aria-hidden="true">
-                <path
-                  d="M8.5 21 13 11.5l3 5.6L19.3 10 24 21"
-                  fill="none"
-                  stroke="#fff"
-                  strokeWidth="2.6"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
+                <g fill="none" stroke="#fff" strokeWidth="2.9">
+                  <circle cx="19.5" cy="12.5" r="5" />
+                  <circle cx="12.5" cy="12.5" r="5" />
+                  <circle cx="12.5" cy="19.5" r="5" />
+                  <circle cx="19.5" cy="19.5" r="5" />
+                </g>
               </svg>
             </span>
           </div>

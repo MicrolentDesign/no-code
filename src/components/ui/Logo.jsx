@@ -7,14 +7,12 @@ export default function Logo({ light = false }) {
       <span className="logo__mark">
         <svg viewBox="0 0 32 32" aria-hidden="true">
           <rect width="32" height="32" rx="9" fill="#2E6BFF" />
-          <path
-            d="M8.5 20.5 12.8 12l2.9 5.4L18.7 11 23.5 20.5"
-            fill="none"
-            stroke="#fff"
-            strokeWidth="2.4"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
+          <g fill="none" stroke="#fff" strokeWidth="2.9">
+            <circle cx="19.5" cy="12.5" r="5" />
+            <circle cx="12.5" cy="12.5" r="5" />
+            <circle cx="12.5" cy="19.5" r="5" />
+            <circle cx="19.5" cy="19.5" r="5" />
+          </g>
         </svg>
       </span>
       <span className="logo__word">{brand.name}</span>

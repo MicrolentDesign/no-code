@@ -1,3 +1,4 @@
+import useLenis from "./hooks/useLenis";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import LogoMarquee from "./components/LogoMarquee/LogoMarquee";
@@ -14,6 +15,8 @@ import FinalCTA from "./components/FinalCTA/FinalCTA";
 import Footer from "./components/Footer/Footer";
 
 export default function App() {
+  useLenis();
+
   return (
     <>
       <Navbar />

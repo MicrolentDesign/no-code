@@ -6,24 +6,42 @@ import Reveal from "../ui/Reveal";
 import { slider } from "../../data/content";
 
 const DURATION = 6000;
+const EXIT_MS = 280;
 
 export default function ContentSlider() {
+  // `active` drives the rendered slide content; `focus` drives which tab
+  // is highlighted / filling. They're decoupled so a click moves the tab
+  // indicator immediately while the content crossfades smoothly after it.
   const [active, setActive] = useState(0);
+  const [focus, setFocus] = useState(0);
   const [paused, setPaused] = useState(false);
-  const timer = useRef(null);
+  const exitTimer = useRef(null);
+  const autoTimer = useRef(null);
   const count = slider.slides.length;
+
+  const goTo = (i) => {
+    if (i === focus) return;
+    setFocus(i);
+    clearTimeout(exitTimer.current);
+    exitTimer.current = setTimeout(() => setActive(i), EXIT_MS);
+  };
 
   useEffect(() => {
     if (paused) return;
-    timer.current = setTimeout(() => setActive((a) => (a + 1) % count), DURATION);
-    return () => clearTimeout(timer.current);
-  }, [active, paused, count]);
+    autoTimer.current = setTimeout(() => goTo((focus + 1) % count), DURATION);
+    return () => clearTimeout(autoTimer.current);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [focus, paused, count]);
+
+  useEffect(() => () => clearTimeout(exitTimer.current), []);
 
   const s = slider.slides[active];
+  const isOut = focus !== active;
 
   return (
     <section
-      className="cslider section"
+      className={`cslider section ${paused ? "is-paused" : ""}`}
+      style={{ "--dur": `${DURATION}ms` }}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -38,18 +56,11 @@ export default function ContentSlider() {
           {slider.slides.map((sl, i) => (
             <button
               key={sl.title}
-              className={`cslider__tab ${i === active ? "is-active" : ""}`}
-              onClick={() => setActive(i)}
+              className={`cslider__tab ${i === focus ? "is-active" : ""}`}
+              onClick={() => goTo(i)}
               aria-label={sl.title}
             >
-              <span
-                className="cslider__tab-fill"
-                style={{
-                  animationDuration: `${DURATION}ms`,
-                  animationPlayState: i === active && !paused ? "running" : "paused",
-                }}
-                key={`${active}-${i}`}
-              />
+              <span className="cslider__tab-fill" />
             </button>
           ))}
         </div>
@@ -58,7 +69,7 @@ export default function ContentSlider() {
           <div className="cslider__visual">
             <PriceMock />
           </div>
-          <div className="cslider__text" key={active}>
+          <div className={`cslider__text ${isOut ? "is-out" : ""}`}>
             <span className="cslider__ic">
               <Icon name={s.icon} size={24} />
             </span>

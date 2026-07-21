@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
   gap: 1.5rem;
-  align-items: start;
+  align-items: stretch; /* left card height matches the combined right column height */
 }
 
 /* ---- left panel ---- */

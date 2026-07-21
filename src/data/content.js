@@ -51,7 +51,6 @@ export const features = {
       title: "AI That Learns You",
       desc: "Personalised strategy suggestions built from your own trading patterns.",
       large: true,
-      featured: true,
     },
     {
       icon: "ShieldCheck",
@@ -200,6 +199,8 @@ export const testimonials = {
       name: "Amara O.",
       role: "Swing trader, Lagos",
       rating: 5,
+      avatar:
+        "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=200&auto=format&fit=crop&crop=faces",
     },
     {
       quote:
@@ -207,6 +208,8 @@ export const testimonials = {
       name: "Daniel R.",
       role: "Prop desk, Austin",
       rating: 5,
+      avatar:
+        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop&crop=faces",
     },
     {
       quote:
@@ -214,6 +217,8 @@ export const testimonials = {
       name: "Mei L.",
       role: "Fund analyst, Singapore",
       rating: 5,
+      avatar:
+        "https://images.unsplash.com/photo-1548142813-c348350df52b?q=80&w=200&auto=format&fit=crop&crop=faces",
     },
   ],
 };
@@ -296,6 +301,13 @@ export const finalCta = {
   titleMuted: "already winning smarter.",
   subtitle: "No setup fees. No hidden catches. Just start.",
   cta: "Start Trading Now",
+  avatars: [
+    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=140&auto=format&fit=crop&crop=faces",
+    "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=140&auto=format&fit=crop&crop=faces",
+    "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=140&auto=format&fit=crop&crop=faces",
+    "https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?q=80&w=140&auto=format&fit=crop&crop=faces",
+    "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=140&auto=format&fit=crop&crop=faces",
+  ],
 };
 
 export const footer = {

@@ -4,8 +4,6 @@ import Icon from "../ui/Icon";
 import Reveal from "../ui/Reveal";
 import { finalCta } from "../../data/content";
 
-const AV = ["A", "M", "J", "K", "L"];
-
 export default function FinalCTA() {
   return (
     <section className="fcta section">
@@ -15,9 +13,9 @@ export default function FinalCTA() {
           <span className="fcta__wave fcta__wave--2" aria-hidden="true" />
 
           <div className="fcta__avatars" aria-hidden="true">
-            {AV.map((a, i) => (
-              <span className="fcta__av" key={i} style={{ "--i": i - 2 }}>
-                {a}
+            {finalCta.avatars.map((src, i) => (
+              <span className="fcta__av" key={i}>
+                <img src={src} alt="" loading="lazy" />
               </span>
             ))}
           </div>

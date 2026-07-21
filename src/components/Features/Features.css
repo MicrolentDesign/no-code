@@ -16,12 +16,39 @@
   padding: 1.4rem;
   box-shadow: var(--shadow-sm);
   overflow: hidden;
+  isolation: isolate;
   transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
 }
-.bcard:hover {
+.bcard:hover,
+.bcard:focus-visible {
   transform: translateY(-5px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--border-strong);
+  box-shadow: var(--shadow-brand);
+  border-color: transparent;
+  outline: none;
+}
+
+/* ---- hover/active state layer: white (default) -> blue, smooth crossfade ---- */
+.bcard__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: var(--grad-panel);
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+.bcard__bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1.4px);
+  background-size: 16px 16px;
+  -webkit-mask-image: radial-gradient(120% 90% at 100% 100%, #000 30%, transparent 75%);
+  mask-image: radial-gradient(120% 90% at 100% 100%, #000 30%, transparent 75%);
+}
+.bcard:hover .bcard__bg,
+.bcard:focus-visible .bcard__bg {
+  opacity: 1;
 }
 
 /* top row: 2 large cards */
@@ -34,6 +61,7 @@
 /* ---- visual stage ---- */
 .bcard__visual {
   position: relative;
+  z-index: 1;
   display: grid;
   place-items: center;
   border-radius: var(--r-md);
@@ -41,6 +69,11 @@
   overflow: hidden;
   height: 128px;
   margin-bottom: 1.15rem;
+  transition: background 0.5s ease;
+}
+.bcard:hover .bcard__visual,
+.bcard:focus-visible .bcard__visual {
+  background: rgba(255, 255, 255, 0.1);
 }
 .bcard--lg .bcard__visual {
   flex: 1;
@@ -70,6 +103,13 @@
   color: var(--brand);
   box-shadow: 0 10px 24px rgba(46, 107, 255, 0.22);
   backdrop-filter: blur(4px);
+  transition: background 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+}
+.bcard:hover .bcard__icon,
+.bcard:focus-visible .bcard__icon {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  box-shadow: none;
 }
 .bcard--lg .bcard__icon {
   width: 76px;
@@ -78,42 +118,32 @@
 }
 
 .bcard__title {
+  position: relative;
+  z-index: 1;
   font-size: 1.16rem;
   font-weight: 600;
   margin-bottom: 0.4rem;
+  transition: color 0.4s ease;
 }
 .bcard--lg .bcard__title {
   font-size: 1.4rem;
 }
+.bcard:hover .bcard__title,
+.bcard:focus-visible .bcard__title {
+  color: #fff;
+}
 .bcard__desc {
+  position: relative;
+  z-index: 1;
   font-size: 0.94rem;
   color: var(--muted);
   line-height: 1.55;
   max-width: 40ch;
+  transition: color 0.4s ease;
 }
-
-/* ---- featured (blue) card ---- */
-.bcard--featured {
-  background: var(--grad-panel);
-  border-color: transparent;
-  box-shadow: var(--shadow-brand);
-}
-.bcard--featured .bcard__visual {
-  background: rgba(255, 255, 255, 0.1);
-}
-.bcard--featured .bcard__orb {
-  background: radial-gradient(closest-side, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
-}
-.bcard--featured .bcard__icon {
-  background: rgba(255, 255, 255, 0.16);
-  color: #fff;
-  box-shadow: none;
-}
-.bcard--featured .bcard__title {
-  color: #fff;
-}
-.bcard--featured .bcard__desc {
-  color: rgba(255, 255, 255, 0.86);
+.bcard:hover .bcard__desc,
+.bcard:focus-visible .bcard__desc {
+  color: rgba(255, 255, 255, 0.88);
 }
 
 /* ---- responsive ---- */

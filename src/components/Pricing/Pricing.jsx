@@ -41,7 +41,7 @@ export default function Pricing() {
         <div className="pricing__grid">
           {pricing.plans.map((p, i) => {
             const price = yearly ? p.price.yearly : p.price.monthly;
-            const period = price === 0 ? "forever" : yearly ? "per month, billed yearly" : "per month";
+            const period = price === 0 ? "forever" : "per month";
             return (
               <Reveal
                 as="article"

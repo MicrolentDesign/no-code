@@ -21,10 +21,10 @@ export default function Features() {
           {features.items.map((f) => (
             <article
               key={f.title}
-              className={`bcard ${f.large ? "bcard--lg" : ""} ${
-                f.featured ? "bcard--featured" : ""
-              }`}
+              tabIndex={0}
+              className={`bcard ${f.large ? "bcard--lg" : ""}`}
             >
+              <span className="bcard__bg" aria-hidden="true" />
               <div className="bcard__visual">
                 <span className="bcard__orb" />
                 <span className="bcard__icon">
