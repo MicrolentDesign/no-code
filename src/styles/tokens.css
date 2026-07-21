@@ -1,0 +1,68 @@
+/* =============================================================
+   Design tokens — light theme derived from the brand reference
+   Change values here to re-skin the entire site.
+   ============================================================= */
+:root {
+  /* ---- Surfaces & background ---- */
+  --bg: #f4f6fb;
+  --bg-soft: #eef2fa;
+  --surface: #ffffff;
+  --surface-soft: #f8faff;
+
+  /* ---- Ink / text ---- */
+  --ink: #0b1230; /* headings + dark buttons */
+  --head-muted: #aab2c8; /* 2nd line of two-tone headings */
+  --text: #3b4468; /* body copy */
+  --muted: #8a90a8; /* secondary / captions */
+
+  /* ---- Brand ---- */
+  --brand: #2e6bff;
+  --brand-strong: #1f55e6;
+  --brand-100: #e9f0ff;
+  --brand-050: #f2f6ff;
+
+  /* ---- Support ---- */
+  --success: #1fbd6b;
+  --success-100: #e2f7ec;
+  --danger: #f0563a;
+  --border: #e8ecf6;
+  --border-strong: #dbe2f0;
+  --dark: #0c1330; /* dark pill buttons */
+
+  /* ---- Gradients ---- */
+  --grad-brand: linear-gradient(140deg, #4c86ff 0%, #2e6bff 52%, #1b52e6 100%);
+  --grad-soft: linear-gradient(180deg, #ffffff 0%, #f4f7ff 100%);
+  /* light "aurora" wash used behind hero / cinematic sections */
+  --grad-aurora: radial-gradient(
+    60% 55% at 50% -8%,
+    #dbe6ff 0%,
+    #eaf1ff 34%,
+    var(--bg) 72%
+  );
+  /* rich blue panel used for feature-bento visuals & cinematic panels */
+  --grad-panel: linear-gradient(155deg, #3f78ff 0%, #2e6bff 46%, #123f9c 100%);
+
+  /* ---- Radii ---- */
+  --r-sm: 10px;
+  --r-md: 16px;
+  --r-lg: 22px;
+  --r-xl: 30px;
+  --r-pill: 999px;
+
+  /* ---- Shadows (blue-tinted, soft) ---- */
+  --shadow-xs: 0 1px 2px rgba(16, 24, 64, 0.06);
+  --shadow-sm: 0 2px 8px rgba(23, 43, 99, 0.06), 0 1px 2px rgba(23, 43, 99, 0.04);
+  --shadow-md: 0 12px 30px rgba(23, 43, 99, 0.09);
+  --shadow-lg: 0 28px 64px rgba(23, 43, 99, 0.14);
+  --shadow-brand: 0 18px 40px rgba(46, 107, 255, 0.35);
+  --shadow-dark: 0 12px 26px rgba(11, 18, 48, 0.28);
+
+  /* ---- Typography ---- */
+  --font-head: "Poppins", system-ui, -apple-system, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+
+  /* ---- Layout ---- */
+  --container: 1180px;
+  --gutter: 24px;
+  --section-y: clamp(64px, 8vw, 116px);
+}

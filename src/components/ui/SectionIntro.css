@@ -1,0 +1,64 @@
+.sintro {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  max-width: 640px;
+}
+.sintro--center {
+  align-items: center;
+  text-align: center;
+  margin-inline: auto;
+}
+.sintro--left {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.sintro__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.85rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-pill);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--brand-strong);
+  box-shadow: var(--shadow-xs);
+}
+.sintro__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--brand);
+  box-shadow: 0 0 0 3px var(--brand-100);
+}
+
+.sintro__title {
+  font-size: clamp(1.85rem, 3.4vw, 2.65rem);
+  font-weight: 600;
+}
+.sintro__sub {
+  font-size: clamp(1rem, 1.35vw, 1.1rem);
+  color: var(--muted);
+  max-width: 52ch;
+}
+
+/* light variant for dark/gradient backgrounds */
+.sintro--light .sintro__title {
+  color: #fff;
+}
+.sintro--light .sintro__sub {
+  color: rgba(255, 255, 255, 0.82);
+}
+.sintro--light .sintro__eyebrow {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.22);
+  color: #fff;
+  backdrop-filter: blur(6px);
+}
+.sintro--light .sintro__dot {
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+}

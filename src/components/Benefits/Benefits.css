@@ -1,0 +1,112 @@
+.benefits__panel {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--r-xl);
+  background: var(--grad-panel);
+  padding: clamp(2.2rem, 5vw, 4rem);
+  box-shadow: var(--shadow-lg);
+  isolation: isolate;
+}
+
+/* immersive background: faint globe + glow (light-theme stand-in for Ternic's Earth video) */
+.benefits__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+.benefits__globe {
+  position: absolute;
+  right: -6%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: min(620px, 70%);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.5) 1px, transparent 1.6px);
+  background-size: 22px 22px;
+  -webkit-mask-image: radial-gradient(closest-side, #000 60%, transparent 78%);
+  mask-image: radial-gradient(closest-side, #000 60%, transparent 78%);
+  opacity: 0.28;
+}
+.benefits__glow {
+  position: absolute;
+  left: 20%;
+  bottom: -40%;
+  width: 60%;
+  height: 80%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(120, 170, 255, 0.5), transparent);
+  filter: blur(50px);
+}
+
+.benefits__head {
+  max-width: 640px;
+}
+.benefits__title {
+  color: #fff;
+  font-size: clamp(1.9rem, 3.4vw, 2.8rem);
+  font-weight: 600;
+  line-height: 1.08;
+}
+.benefits__muted {
+  color: rgba(255, 255, 255, 0.55);
+}
+.benefits__sub {
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 1rem;
+  max-width: 52ch;
+  line-height: 1.6;
+}
+.benefits__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.6rem;
+}
+
+/* explore columns */
+.benefits__explore {
+  margin-top: clamp(3rem, 7vw, 6rem);
+}
+.benefits__explore-h {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #fff;
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 1.15rem;
+  margin-bottom: 1.6rem;
+}
+.benefits__cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: var(--r-md);
+  overflow: hidden;
+}
+.bcol {
+  background: transparent;
+  padding: 1.5rem 1.4rem;
+  backdrop-filter: blur(2px);
+}
+.bcol__title {
+  color: #fff;
+  font-size: 1.08rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.bcol__desc {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 760px) {
+  .benefits__cols {
+    grid-template-columns: 1fr;
+    gap: 1px;
+  }
+}

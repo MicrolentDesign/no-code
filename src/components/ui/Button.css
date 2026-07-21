@@ -1,0 +1,119 @@
+.btn {
+  --h: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  height: var(--h);
+  padding-inline: 1.5rem;
+  font-family: var(--font-head);
+  font-weight: 500;
+  font-size: 0.95rem;
+  border-radius: var(--r-pill);
+  white-space: nowrap;
+  transition: transform 0.18s ease, box-shadow 0.24s ease,
+    background 0.2s ease, color 0.2s ease;
+  will-change: transform;
+}
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* sizes */
+.btn--sm {
+  --h: 40px;
+  font-size: 0.875rem;
+  padding-inline: 1.1rem;
+}
+.btn--lg {
+  --h: 56px;
+  font-size: 1rem;
+  padding-inline: 1.9rem;
+}
+
+/* chip (leading circle icon) sits inset on the left */
+.btn--chip {
+  padding-left: 0.4rem;
+}
+.btn__chip {
+  display: grid;
+  place-items: center;
+  width: calc(var(--h) - 12px);
+  height: calc(var(--h) - 12px);
+  border-radius: 50%;
+  background: var(--brand);
+  color: #fff;
+  flex: none;
+}
+
+/* ---- variants ---- */
+.btn--brand {
+  background: var(--grad-brand);
+  color: #fff;
+  box-shadow: 0 10px 22px rgba(46, 107, 255, 0.28);
+}
+.btn--brand:hover {
+  box-shadow: var(--shadow-brand);
+  transform: translateY(-2px);
+}
+
+.btn--dark {
+  background: var(--dark);
+  color: #fff;
+  box-shadow: var(--shadow-dark);
+}
+.btn--dark:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(11, 18, 48, 0.34);
+}
+.btn--dark .btn__chip {
+  background: var(--brand);
+}
+
+.btn--light {
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--border-strong);
+  box-shadow: var(--shadow-sm);
+}
+.btn--light:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--brand);
+}
+
+.btn--white {
+  background: #fff;
+  color: var(--ink);
+  box-shadow: var(--shadow-md);
+}
+.btn--white:hover {
+  transform: translateY(-2px);
+}
+.btn--white .btn__chip {
+  background: var(--brand);
+}
+
+.btn--ghost {
+  color: var(--ink);
+  background: transparent;
+}
+.btn--ghost:hover {
+  color: var(--brand);
+}
+
+/* translucent — for use on dark/blue panels */
+.btn--glass {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(6px);
+}
+.btn--glass:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+.btn--glass .btn__chip {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--brand);
+}
