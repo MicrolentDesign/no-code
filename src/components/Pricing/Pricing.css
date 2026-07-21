@@ -28,11 +28,18 @@
   border-radius: var(--r-pill);
 }
 .pricing__switch {
+  display: flex;
+  align-items: center;
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
   width: 56px;
   height: 30px;
   border-radius: var(--r-pill);
   background: var(--border-strong);
   padding: 3px;
+  overflow: hidden;
+  flex-shrink: 0;
   transition: background 0.25s ease;
 }
 .pricing__switch.is-year {
@@ -45,6 +52,8 @@
   border-radius: 50%;
   background: #fff;
   box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+  pointer-events: none;
   transition: transform 0.25s ease;
 }
 .pricing__switch.is-year .pricing__knob {
