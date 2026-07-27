@@ -19,9 +19,11 @@
   box-shadow: var(--shadow-sm);
   transition: transform 0.24s ease, box-shadow 0.24s ease;
 }
-.wf-mini__step:hover {
+.wf-mini__step:hover,
+.wf-mini__step.is-active-center {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
+  border-color: var(--brand);
 }
 .wf-mini__num {
   display: block;

@@ -23,8 +23,8 @@ export function useCenterActive() {
         setIsCenter(entry.isIntersecting);
       },
       {
-        rootMargin: "-30% 0px -30% 0px", // Middle 40% band of screen
-        threshold: 0.15,
+        rootMargin: "-44% 0px -44% 0px", // Tight 12% vertical center band so only one card lights up at a time
+        threshold: 0.1,
       }
     );
 

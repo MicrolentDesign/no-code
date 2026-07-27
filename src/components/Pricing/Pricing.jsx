@@ -4,6 +4,46 @@ import Icon from "../ui/Icon";
 import SectionIntro from "../ui/SectionIntro";
 import Reveal from "../ui/Reveal";
 import { pricing } from "../../data/content";
+import { useCenterActive } from "../../hooks/useCenterActive";
+
+function PricingPlan({ p, i, yearly }) {
+  const { ref, isCenter } = useCenterActive();
+  const price = yearly ? p.price.yearly : p.price.monthly;
+  const period = price === 0 ? "forever" : "per month";
+
+  return (
+    <Reveal
+      ref={ref}
+      as="article"
+      key={p.name}
+      delay={i * 90}
+      className={`plan ${p.featured ? "plan--featured" : ""} ${isCenter ? "is-active-center" : ""}`}
+    >
+      <div className="plan__top">
+        <h3 className="plan__name">{p.name}</h3>
+        <p className="plan__blurb">{p.blurb}</p>
+        <div className="plan__price">
+          <span className="plan__amt">${price}</span>
+          <span className="plan__per">/{period}</span>
+        </div>
+      </div>
+      <a href="#" className={`plan__cta ${p.featured ? "plan__cta--solid" : ""}`}>
+        {p.cta}
+        <Icon name="ArrowRight" size={16} />
+      </a>
+      <ul className="plan__feats">
+        {p.features.map((f) => (
+          <li key={f}>
+            <span className="plan__check">
+              <Icon name="Check" size={13} strokeWidth={3} />
+            </span>
+            {f}
+          </li>
+        ))}
+      </ul>
+    </Reveal>
+  );
+}
 
 export default function Pricing() {
   const [yearly, setYearly] = useState(false);
@@ -39,41 +79,9 @@ export default function Pricing() {
         </Reveal>
 
         <div className="pricing__grid">
-          {pricing.plans.map((p, i) => {
-            const price = yearly ? p.price.yearly : p.price.monthly;
-            const period = price === 0 ? "forever" : "per month";
-            return (
-              <Reveal
-                as="article"
-                key={p.name}
-                delay={i * 90}
-                className={`plan ${p.featured ? "plan--featured" : ""}`}
-              >
-                <div className="plan__top">
-                  <h3 className="plan__name">{p.name}</h3>
-                  <p className="plan__blurb">{p.blurb}</p>
-                  <div className="plan__price">
-                    <span className="plan__amt">${price}</span>
-                    <span className="plan__per">/{period}</span>
-                  </div>
-                </div>
-                <a href="#" className={`plan__cta ${p.featured ? "plan__cta--solid" : ""}`}>
-                  {p.cta}
-                  <Icon name="ArrowRight" size={16} />
-                </a>
-                <ul className="plan__feats">
-                  {p.features.map((f) => (
-                    <li key={f}>
-                      <span className="plan__check">
-                        <Icon name="Check" size={13} strokeWidth={3} />
-                      </span>
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-              </Reveal>
-            );
-          })}
+          {pricing.plans.map((p, i) => (
+            <PricingPlan key={p.name} p={p} i={i} yearly={yearly} />
+          ))}
         </div>
       </div>
     </section>
