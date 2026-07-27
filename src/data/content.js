@@ -11,11 +11,12 @@ export const brand = {
 
 export const nav = {
   links: [
-    { label: "Home", href: "#home" },
-    { label: "Features", href: "#features" },
-    { label: "How it works", href: "#how" },
-    { label: "Pricing", href: "#pricing" },
-    { label: "FAQ", href: "#faq" },
+    { label: "Home", href: "/#home", match: "/" },
+    { label: "Platform", href: "/platform", match: "/platform" },
+    { label: "Features", href: "/#features" },
+    { label: "How it works", href: "/#how" },
+    { label: "Pricing", href: "/#pricing" },
+    { label: "FAQ", href: "/#faq" },
   ],
   cta: { label: "Get Started", href: "#" },
   login: { label: "Log in", href: "#" },
@@ -308,6 +309,319 @@ export const finalCta = {
     "https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?q=80&w=140&auto=format&fit=crop&crop=faces",
     "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=140&auto=format&fit=crop&crop=faces",
   ],
+};
+
+export const platform = {
+  hero: {
+    eyebrow: "Platform",
+    titleLead: "Everything You Need to Build, Test and",
+    titleMuted: "Execute Trading Strategies",
+    subtitle:
+      "Design professional algorithmic trading strategies without writing code. Validate your ideas with historical data, simulate trades safely and connect your broker when you're ready to trade.",
+    cta: "Get Started",
+    demo: "Book a Demo",
+  },
+
+  overview: {
+    eyebrow: "Platform Overview",
+    titleLead: "One Platform.",
+    titleMuted: "Every Stage of Your Trading Workflow.",
+    desc: "From building strategies to analysing performance, the platform brings together every essential tool into a single intuitive workspace. Whether you're validating an idea or preparing for live execution, every workflow is designed to minimise complexity while giving you complete control over your trading process.",
+    cards: [
+      {
+        icon: "Blocks",
+        title: "Visual Strategy Builder",
+        desc: "Create sophisticated rule-based trading strategies through an intuitive visual interface without writing code.",
+      },
+      {
+        icon: "LineChart",
+        title: "Historical Backtesting",
+        desc: "Validate strategies using historical market data before deploying them in real market conditions.",
+      },
+      {
+        icon: "Activity",
+        title: "Paper Trading",
+        desc: "Monitor strategy performance using virtual capital and real-time market simulations.",
+      },
+      {
+        icon: "Link2",
+        title: "Broker Connectivity",
+        desc: "Connect your preferred brokerage account and manage trading workflows from one place.",
+      },
+      {
+        icon: "Globe",
+        title: "Market Monitoring",
+        desc: "Track market movements, receive alerts and stay informed through a unified trading dashboard.",
+      },
+      {
+        icon: "BarChart3",
+        title: "Performance Analytics",
+        desc: "Review strategy performance through comprehensive reports, trade history and visual analytics.",
+      },
+    ],
+  },
+
+  stickyNav: [
+    { id: "strategy-builder", label: "Strategy Builder" },
+    { id: "backtesting", label: "Backtesting" },
+    { id: "paper-trading", label: "Paper Trading" },
+    { id: "live-trading", label: "Live Trading" },
+    { id: "broker", label: "Broker" },
+    { id: "scanner", label: "Scanner" },
+    { id: "reports", label: "Reports" },
+  ],
+
+  strategyBuilder: {
+    eyebrow: "Strategy Builder",
+    titleLead: "Turn Trading Logic into",
+    titleMuted: "Visual Workflows",
+    desc: "Design rule-based strategies using an intuitive visual builder that replaces complex programming with simple building blocks. Combine conditions, indicators and trading rules into reusable strategies that are easy to understand and refine.",
+    features: [
+      "Create entry conditions",
+      "Create exit conditions",
+      "Combine rules using logical operators",
+      "Organise reusable strategies",
+      "Manage versions confidently",
+      "Configure risk parameters",
+    ],
+    gridTitle: "Designed for Flexibility",
+    grid: [
+      { icon: "Blocks", title: "Rule Builder", desc: "Build entry and exit conditions visually." },
+      {
+        icon: "SlidersHorizontal",
+        title: "Indicator Library",
+        desc: "Access commonly used technical indicators through a simple interface.",
+      },
+      {
+        icon: "Layers",
+        title: "Portfolio Support",
+        desc: "Create strategies for single instruments or diversified portfolios.",
+      },
+      {
+        icon: "ShieldCheck",
+        title: "Risk Controls",
+        desc: "Define position sizing and trade management parameters.",
+      },
+      {
+        icon: "Clock",
+        title: "Version History",
+        desc: "Iterate confidently by saving and managing strategy versions.",
+      },
+      {
+        icon: "Copy",
+        title: "Reusable Templates",
+        desc: "Create reusable strategy templates to accelerate new ideas.",
+      },
+    ],
+    workflow: {
+      title: "From Idea to Strategy in Four Steps",
+      steps: [
+        { icon: "Lightbulb", title: "Create" },
+        { icon: "SlidersHorizontal", title: "Configure" },
+        { icon: "CheckCircle", title: "Validate" },
+        { icon: "Rocket", title: "Deploy" },
+      ],
+    },
+  },
+
+  backtesting: {
+    eyebrow: "Backtesting",
+    titleLead: "Validate Every Strategy",
+    titleMuted: "Before You Risk Capital",
+    desc: "Explore how strategies would have performed under historical market conditions. Compare outcomes, analyse trade behaviour and refine ideas through a structured validation workflow before moving into simulated or live environments.",
+    metrics: [
+      { icon: "Database", label: "Historical Data" },
+      { icon: "BarChart3", label: "Performance Metrics" },
+      { icon: "ListChecks", label: "Trade History" },
+      { icon: "LineChart", label: "Equity Curve" },
+      { icon: "Percent", label: "Win Rate" },
+      { icon: "TrendingDown", label: "Drawdown Analysis" },
+    ],
+    grid: [
+      {
+        icon: "History",
+        title: "Historical Analysis",
+        desc: "Review historical strategy behaviour over selected periods.",
+      },
+      {
+        icon: "BarChart3",
+        title: "Performance Metrics",
+        desc: "Understand strategy outcomes through meaningful trading statistics.",
+      },
+      { icon: "ListChecks", title: "Trade Log", desc: "Inspect every executed trade with complete transparency." },
+      {
+        icon: "GitCompare",
+        title: "Scenario Comparison",
+        desc: "Compare iterations and refine strategies with confidence.",
+      },
+    ],
+    workflow: {
+      title: "Backtest with Confidence in Four Steps",
+      steps: [
+        { icon: "Search", title: "Choose Market" },
+        { icon: "Play", title: "Run Test" },
+        { icon: "BarChart3", title: "Review Results" },
+        { icon: "Repeat", title: "Refine Strategy" },
+      ],
+    },
+  },
+
+  paperTrading: {
+    eyebrow: "Paper Trading",
+    titleLead: "Test Strategies in Live Markets",
+    titleMuted: "Without Financial Risk",
+    desc: "Deploy your validated strategies into a simulated trading environment powered by live market data. Observe behaviour, monitor performance and gain confidence before placing a single real order.",
+    grid: [
+      {
+        icon: "Wallet",
+        title: "Virtual Capital",
+        desc: "Trade using configurable paper funds that mirror real market behaviour.",
+      },
+      {
+        icon: "Activity",
+        title: "Real-Time Simulation",
+        desc: "Monitor trades against live market conditions with realistic execution flows.",
+      },
+      {
+        icon: "LayoutDashboard",
+        title: "Open Positions",
+        desc: "Track active trades, unrealised profit & loss and position health.",
+      },
+      {
+        icon: "ListChecks",
+        title: "Trade Journal",
+        desc: "Review every simulated execution and identify opportunities for refinement.",
+      },
+      {
+        icon: "BarChart3",
+        title: "Performance Dashboard",
+        desc: "Analyse paper trading performance over time through visual reports.",
+      },
+      {
+        icon: "ShieldCheck",
+        title: "Risk-Free Learning",
+        desc: "Experiment with new strategies without exposing real capital.",
+      },
+    ],
+    workflow: {
+      title: "From Strategy to Simulated Execution",
+      steps: [
+        { icon: "Rocket", title: "Deploy Strategy" },
+        { icon: "Globe", title: "Receive Market Data" },
+        { icon: "Activity", title: "Monitor Positions" },
+        { icon: "BarChart3", title: "Review Performance" },
+      ],
+    },
+  },
+
+  liveTrading: {
+    eyebrow: "Live Trading",
+    titleLead: "Move from Simulation to",
+    titleMuted: "Real Market Execution",
+    desc: "When you're ready, transition selected strategies into live trading with confidence. Maintain complete control over every order while monitoring execution from a single workspace.",
+    grid: [
+      {
+        icon: "CheckCircle",
+        title: "Manual Confirmation",
+        desc: "Every trade remains under your control before submission.",
+      },
+      {
+        icon: "Activity",
+        title: "Execution Tracking",
+        desc: "Monitor pending, filled and cancelled orders in real time.",
+      },
+      {
+        icon: "LayoutDashboard",
+        title: "Position Monitoring",
+        desc: "View open positions, exposure and account activity from one dashboard.",
+      },
+      {
+        icon: "History",
+        title: "Order History",
+        desc: "Access complete trading records with detailed execution information.",
+      },
+      { icon: "Zap", title: "Notifications", desc: "Receive instant alerts whenever action is required." },
+      {
+        icon: "Layers",
+        title: "Unified Dashboard",
+        desc: "Manage multiple trading workflows from a single interface.",
+      },
+    ],
+    stats: [
+      { value: "128,450", label: "Orders Executed" },
+      { value: "342", label: "Strategies Running" },
+      { value: "1,204", label: "Open Positions" },
+      { value: "18", label: "Alerts Today" },
+    ],
+  },
+
+  broker: {
+    eyebrow: "Broker Integrations",
+    titleLead: "Connect Your Preferred",
+    titleMuted: "Brokerage",
+    desc: "Connect your brokerage account securely to streamline order management and portfolio monitoring without leaving the platform. The platform follows a bring-your-own-broker approach — Interactive Brokers is supported as the initial integration, with more brokers planned over time.",
+    grid: [
+      { icon: "Link2", title: "Interactive Brokers", desc: "Connect your account securely." },
+      { icon: "LayoutDashboard", title: "Portfolio Sync", desc: "View positions inside one dashboard." },
+      { icon: "ListChecks", title: "Order Management", desc: "Monitor execution lifecycle." },
+      {
+        icon: "Activity",
+        title: "Connection Status",
+        desc: "Know when accounts are connected and healthy.",
+      },
+      { icon: "Lock", title: "Secure Authentication", desc: "Credentials remain encrypted." },
+      { icon: "Copy", title: "Future Integrations", desc: "Designed to support additional brokers over time." },
+    ],
+  },
+
+  scanner: {
+    eyebrow: "Market Scanner",
+    titleLead: "Discover Trading",
+    titleMuted: "Opportunities Faster",
+    desc: "Scan the market using predefined or custom conditions to identify opportunities that match your trading approach.",
+    grid: [
+      { icon: "Search", title: "Pre-built Scanners", desc: "Access commonly used market scanning templates." },
+      { icon: "SlidersHorizontal", title: "Custom Filters", desc: "Define personalised scanning conditions." },
+      { icon: "Activity", title: "Real-Time Results", desc: "Review opportunities as market conditions change." },
+      { icon: "Copy", title: "Saved Scanners", desc: "Reuse frequently used market filters." },
+      { icon: "Globe", title: "Multi-Market Support", desc: "Search across supported exchanges." },
+      { icon: "Layers", title: "Smart Organisation", desc: "Keep watchlists and scanners organised." },
+    ],
+    workflow: {
+      title: "From Filter to Opportunity in Four Steps",
+      steps: [
+        { icon: "Search", title: "Choose Market" },
+        { icon: "SlidersHorizontal", title: "Apply Filters" },
+        { icon: "ListChecks", title: "Review Matches" },
+        { icon: "ArrowUpRight", title: "Open Opportunity" },
+      ],
+    },
+  },
+
+  reports: {
+    eyebrow: "Analytics",
+    titleLead: "Measure Performance with",
+    titleMuted: "Actionable Insights",
+    desc: "Understand how every strategy performs through detailed analytics, historical reports and visual performance dashboards that help refine future trading decisions.",
+    grid: [
+      { icon: "BarChart3", title: "Performance Reports", desc: "Review historical strategy outcomes." },
+      { icon: "ListChecks", title: "Trade History", desc: "Explore every executed trade with filters." },
+      { icon: "GitCompare", title: "Strategy Comparison", desc: "Compare multiple strategy versions." },
+      { icon: "TrendingDown", title: "Risk Metrics", desc: "Understand exposure and drawdowns." },
+      {
+        icon: "LayoutDashboard",
+        title: "Portfolio Summary",
+        desc: "Track overall performance across strategies.",
+      },
+      { icon: "LineChart", title: "Visual Charts", desc: "Transform trading data into meaningful insights." },
+    ],
+    stats: [
+      { value: "48", label: "Strategies" },
+      { value: "12,600+", label: "Reports Generated" },
+      { value: "2.4M+", label: "Historical Records" },
+      { value: "20+", label: "Markets Tracked" },
+    ],
+  },
 };
 
 export const footer = {

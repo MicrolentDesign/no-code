@@ -1,0 +1,93 @@
+.phero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-top: clamp(120px, 14vh, 150px);
+  padding-bottom: clamp(56px, 7vw, 90px);
+  background: var(--bg-soft);
+}
+
+/* concentric ripple bands bleeding off the right edge — the "page banner"
+   structural idea, reinterpreted in our own palette rather than copied */
+.phero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+.phero__waves {
+  position: absolute;
+  top: 50%;
+  right: -18%;
+  transform: translateY(-50%);
+}
+.phero__wave {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(50%, -50%);
+  border-radius: 50%;
+  border: 1.5px solid rgba(46, 107, 255, 0.14);
+  background: radial-gradient(closest-side, rgba(46, 107, 255, 0.05), transparent 75%);
+}
+
+.phero__inner {
+  position: relative;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 1.3rem;
+}
+
+.phero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.4rem 0.9rem 0.4rem 0.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-pill);
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--ink);
+  box-shadow: var(--shadow-sm);
+}
+.phero__eyebrow-ic {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--brand);
+  color: #fff;
+}
+
+.phero__title {
+  font-size: clamp(2.2rem, 4.4vw, 3.4rem);
+  font-weight: 600;
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+}
+
+.phero__sub {
+  color: var(--muted);
+  font-size: clamp(1rem, 1.4vw, 1.12rem);
+  max-width: 52ch;
+  line-height: 1.6;
+}
+
+.phero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 0.4rem;
+}
+
+@media (max-width: 720px) {
+  .phero__waves {
+    right: -46%;
+    opacity: 0.7;
+  }
+}

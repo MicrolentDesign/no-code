@@ -1,0 +1,29 @@
+.metric-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.6rem;
+}
+.metric-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.95rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-pill);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text);
+  box-shadow: var(--shadow-xs);
+}
+.metric-chip__ic {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--brand-050);
+  color: var(--brand);
+  flex: none;
+}

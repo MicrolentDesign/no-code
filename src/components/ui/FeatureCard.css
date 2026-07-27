@@ -1,0 +1,86 @@
+.feat-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 1.6rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
+}
+.feat-card:hover,
+.feat-card:focus-visible {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-brand);
+  border-color: transparent;
+  outline: none;
+}
+
+.feat-card__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: var(--grad-panel);
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+.feat-card__bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1.4px);
+  background-size: 16px 16px;
+  -webkit-mask-image: radial-gradient(120% 90% at 100% 0%, #000 30%, transparent 75%);
+  mask-image: radial-gradient(120% 90% at 100% 0%, #000 30%, transparent 75%);
+}
+.feat-card:hover .feat-card__bg,
+.feat-card:focus-visible .feat-card__bg {
+  opacity: 1;
+}
+
+.feat-card__icon {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 15px;
+  background: var(--brand-050);
+  color: var(--brand);
+  margin-bottom: 1.1rem;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+.feat-card:hover .feat-card__icon,
+.feat-card:focus-visible .feat-card__icon {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+
+.feat-card__title {
+  position: relative;
+  z-index: 1;
+  font-size: 1.12rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  transition: color 0.4s ease;
+}
+.feat-card:hover .feat-card__title,
+.feat-card:focus-visible .feat-card__title {
+  color: #fff;
+}
+
+.feat-card__desc {
+  position: relative;
+  z-index: 1;
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.55;
+  transition: color 0.4s ease;
+}
+.feat-card:hover .feat-card__desc,
+.feat-card:focus-visible .feat-card__desc {
+  color: rgba(255, 255, 255, 0.88);
+}

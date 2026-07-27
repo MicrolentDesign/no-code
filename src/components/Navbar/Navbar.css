@@ -43,6 +43,11 @@
   color: var(--brand);
   background: var(--brand-050);
 }
+.nav__link.is-active {
+  color: var(--brand);
+  font-weight: 600;
+  background: var(--brand-050);
+}
 
 .nav__actions {
   display: flex;

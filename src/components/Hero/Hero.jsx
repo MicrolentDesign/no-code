@@ -1,11 +1,17 @@
 import "./Hero.css";
 import Button from "../ui/Button";
 import Icon from "../ui/Icon";
-import { hero } from "../../data/content";
+import { hero as defaultHero } from "../../data/content";
 
-export default function Hero() {
+/**
+ * data: content object with {eyebrow, titleLead, titleMuted, subtitle, cta, demo}
+ * widgets: optional node replacing the default flanking widgets (used by the
+ *   Platform page's 4-panel illustration); defaults to the homepage pair.
+ * sectionId: id for the <section> (homepage relies on "home" for its nav anchor).
+ */
+export default function Hero({ data = defaultHero, widgets, sectionId = "home" }) {
   return (
-    <section id="home" className="hero">
+    <section id={sectionId} className="hero">
       {/* light aurora background + optional looping video
           (drop a file at /public/assets/hero-bg.mp4 to enable it) */}
       <div className="hero__bg" aria-hidden="true">
@@ -21,30 +27,34 @@ export default function Hero() {
           <span className="hero__eyebrow-ic">
             <Icon name="Rocket" size={13} />
           </span>
-          {hero.eyebrow}
+          {data.eyebrow}
         </span>
 
         <h1 className="hero__title">
-          {hero.titleLead}
+          {data.titleLead}
           <br />
-          <span className="tmuted">{hero.titleMuted}</span>
+          <span className="tmuted">{data.titleMuted}</span>
         </h1>
 
-        <p className="hero__sub">{hero.subtitle}</p>
+        <p className="hero__sub">{data.subtitle}</p>
 
         <div className="hero__cta">
           <Button variant="brand" size="lg" href="#" chip={<Icon name="ArrowRight" size={16} />}>
-            {hero.cta}
+            {data.cta}
           </Button>
           <Button variant="light" size="lg" href="#" chip={<Icon name="Play" size={14} />}>
-            {hero.demo}
+            {data.demo}
           </Button>
         </div>
       </div>
 
       {/* flanking dashboard widgets (Ternic composition) */}
-      <StrategyWidget />
-      <PulseWidget />
+      {widgets ?? (
+        <>
+          <StrategyWidget />
+          <PulseWidget />
+        </>
+      )}
     </section>
   );
 }

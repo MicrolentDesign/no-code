@@ -1,38 +1,23 @@
+import { Routes, Route } from "react-router-dom";
 import useLenis from "./hooks/useLenis";
+import ScrollManager from "./components/ScrollManager";
 import Navbar from "./components/Navbar/Navbar";
-import Hero from "./components/Hero/Hero";
-import LogoMarquee from "./components/LogoMarquee/LogoMarquee";
-import Features from "./components/Features/Features";
-import Steps from "./components/Steps/Steps";
-import Showcase from "./components/Showcase/Showcase";
-import Benefits from "./components/Benefits/Benefits";
-import ContentSlider from "./components/ContentSlider/ContentSlider";
-import Integrations from "./components/Integrations/Integrations";
-import Testimonials from "./components/Testimonials/Testimonials";
-import Pricing from "./components/Pricing/Pricing";
-import FAQ from "./components/FAQ/FAQ";
-import FinalCTA from "./components/FinalCTA/FinalCTA";
 import Footer from "./components/Footer/Footer";
+import Home from "./pages/Home";
+import Platform from "./pages/Platform";
 
 export default function App() {
   useLenis();
 
   return (
     <>
+      <ScrollManager />
       <Navbar />
       <main>
-        <Hero />
-        <LogoMarquee />
-        <Features />
-        <Steps />
-        <Showcase />
-        <Benefits />
-        <ContentSlider />
-        <Integrations />
-        <Testimonials />
-        <Pricing />
-        <FAQ />
-        <FinalCTA />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/platform" element={<Platform />} />
+        </Routes>
       </main>
       <Footer />
     </>

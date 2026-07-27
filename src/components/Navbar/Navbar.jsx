@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 import Logo from "../ui/Logo";
 import Button from "../ui/Button";
@@ -8,6 +9,7 @@ import { nav } from "../../data/content";
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -28,9 +30,13 @@ export default function Navbar() {
 
         <nav className="nav__links" aria-label="Primary">
           {nav.links.map((l) => (
-            <a key={l.label} href={l.href} className="nav__link">
+            <Link
+              key={l.label}
+              to={l.href}
+              className={`nav__link ${l.match && location.pathname === l.match ? "is-active" : ""}`}
+            >
               {l.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -55,9 +61,9 @@ export default function Navbar() {
       <div className="nav__sheet" hidden={!open}>
         <nav className="nav__sheet-links">
           {nav.links.map((l) => (
-            <a key={l.label} href={l.href} onClick={() => setOpen(false)}>
+            <Link key={l.label} to={l.href} onClick={() => setOpen(false)}>
               {l.label}
-            </a>
+            </Link>
           ))}
         </nav>
         <div className="nav__sheet-actions">

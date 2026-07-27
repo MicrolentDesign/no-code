@@ -1,0 +1,8 @@
+/* Subtle background-tint variants to break up the scroll rhythm between
+   sections, per the spec's "alternate background tint" guidance. */
+.ptf-tint {
+  background: linear-gradient(180deg, var(--bg) 0%, #eef3ff 55%, var(--bg) 100%);
+}
+.ptf-tint--light-blue {
+  background: #eef3fb;
+}
