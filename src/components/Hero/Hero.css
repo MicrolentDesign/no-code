@@ -277,3 +277,15 @@
     justify-content: center;
   }
 }
+@media (max-width: 560px) {
+  .hero__cta {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    margin-inline: auto;
+  }
+  .hero__cta .btn {
+    width: 100%;
+  }
+}
+

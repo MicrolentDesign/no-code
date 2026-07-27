@@ -1,23 +1,21 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, forwardRef, useImperativeHandle } from "react";
 import "./Reveal.css";
 
 /**
  * Fade-in + rise-on-scroll wrapper (mirrors Ternic's Webflow IX2 reveals),
  * built on IntersectionObserver — no animation library needed.
  */
-export default function Reveal({
-  children,
-  as: Tag = "div",
-  delay = 0,
-  y = 22,
-  className = "",
-  ...rest
-}) {
-  const ref = useRef(null);
+const Reveal = forwardRef(function Reveal(
+  { children, as: Tag = "div", delay = 0, y = 22, className = "", ...rest },
+  outerRef
+) {
+  const innerRef = useRef(null);
+  useImperativeHandle(outerRef, () => innerRef.current);
+
   const [shown, setShown] = useState(false);
 
   useEffect(() => {
-    const el = ref.current;
+    const el = innerRef.current;
     if (!el || typeof IntersectionObserver === "undefined") {
       setShown(true);
       return;
@@ -39,7 +37,7 @@ export default function Reveal({
 
   return (
     <Tag
-      ref={ref}
+      ref={innerRef}
       className={`reveal ${shown ? "is-in" : ""} ${className}`}
       style={{
         transitionDelay: delay ? `${delay}ms` : undefined,
@@ -50,4 +48,7 @@ export default function Reveal({
       {children}
     </Tag>
   );
-}
+});
+
+export default Reveal;
+

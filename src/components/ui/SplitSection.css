@@ -46,13 +46,25 @@
 
 .split__media {
   position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: var(--r-lg);
+}
+.split__media > * {
+  max-width: 100%;
 }
 
 @media (max-width: 860px) {
   .split {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
   .split--rev .split__media {
     order: 0;
   }
+  .split__media {
+    margin-top: 0.5rem;
+  }
 }
+

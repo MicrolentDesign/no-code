@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Footer.css";
 import Logo from "../ui/Logo";
 import Icon from "../ui/Icon";
@@ -33,11 +34,18 @@ export default function Footer() {
               <div className="footer__col" key={c.title}>
                 <h4>{c.title}</h4>
                 <ul>
-                  {c.links.map((l) => (
-                    <li key={l}>
-                      <a href="#">{l}</a>
-                    </li>
-                  ))}
+                  {c.links.map((l) => {
+                    const isHash = typeof l.href === "string" && l.href.includes("#");
+                    return (
+                      <li key={l.label}>
+                        {isHash ? (
+                          <a href={l.href}>{l.label}</a>
+                        ) : (
+                          <Link to={l.href}>{l.label}</Link>
+                        )}
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             ))}
@@ -56,3 +64,4 @@ export default function Footer() {
     </footer>
   );
 }
+

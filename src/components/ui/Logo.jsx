@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
 import "./Logo.css";
 import { brand } from "../../data/content";
 
 export default function Logo({ light = false }) {
   return (
-    <a className={`logo ${light ? "logo--light" : ""}`} href="#home" aria-label={brand.name}>
+    <Link className={`logo ${light ? "logo--light" : ""}`} to="/" aria-label={brand.name}>
       <span className="logo__mark">
         <svg viewBox="0 0 32 32" aria-hidden="true">
           <rect width="32" height="32" rx="9" fill="#2E6BFF" />
@@ -16,6 +17,7 @@ export default function Logo({ light = false }) {
         </svg>
       </span>
       <span className="logo__word">{brand.name}</span>
-    </a>
+    </Link>
   );
 }
+

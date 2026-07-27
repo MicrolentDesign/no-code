@@ -630,15 +630,30 @@ export const footer = {
   columns: [
     {
       title: "Product",
-      links: ["Features", "How it works", "Pricing", "Integrations"],
+      links: [
+        { label: "Platform", href: "/platform" },
+        { label: "Solutions", href: "/solutions" },
+        { label: "Pricing", href: "/pricing" },
+        { label: "How it works", href: "/#how" },
+      ],
     },
     {
       title: "Company",
-      links: ["About", "Careers", "Blog", "Contact"],
+      links: [
+        { label: "About", href: "/about" },
+        { label: "Contact", href: "/contact" },
+        { label: "Careers", href: "/contact" },
+        { label: "Blog", href: "/about" },
+      ],
     },
     {
       title: "Resources",
-      links: ["Docs", "Support center", "Status", "Terms & privacy"],
+      links: [
+        { label: "Docs", href: "/platform" },
+        { label: "Support center", href: "/contact" },
+        { label: "Status", href: "/platform" },
+        { label: "Terms & privacy", href: "/contact" },
+      ],
     },
   ],
   socials: ["X", "Instagram", "Telegram", "LinkedIn"],

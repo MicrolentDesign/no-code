@@ -2,6 +2,30 @@ import "./Features.css";
 import SectionIntro from "../ui/SectionIntro";
 import Icon from "../ui/Icon";
 import { features } from "../../data/content";
+import { useCenterActive } from "../../hooks/useCenterActive";
+
+function BentoCard({ f }) {
+  const { ref, isCenter } = useCenterActive();
+  return (
+    <article
+      ref={ref}
+      tabIndex={0}
+      className={`bcard ${f.large ? "bcard--lg" : ""} ${isCenter ? "is-active-center" : ""}`}
+    >
+      <span className="bcard__bg" aria-hidden="true" />
+      <div className="bcard__visual">
+        <span className="bcard__orb" />
+        <span className="bcard__icon">
+          <Icon name={f.icon} size={f.large ? 30 : 24} />
+        </span>
+      </div>
+      <div className="bcard__body">
+        <h3 className="bcard__title">{f.title}</h3>
+        <p className="bcard__desc">{f.desc}</p>
+      </div>
+    </article>
+  );
+}
 
 export default function Features() {
   return (
@@ -19,26 +43,11 @@ export default function Features() {
 
         <div className="bento">
           {features.items.map((f) => (
-            <article
-              key={f.title}
-              tabIndex={0}
-              className={`bcard ${f.large ? "bcard--lg" : ""}`}
-            >
-              <span className="bcard__bg" aria-hidden="true" />
-              <div className="bcard__visual">
-                <span className="bcard__orb" />
-                <span className="bcard__icon">
-                  <Icon name={f.icon} size={f.large ? 30 : 24} />
-                </span>
-              </div>
-              <div className="bcard__body">
-                <h3 className="bcard__title">{f.title}</h3>
-                <p className="bcard__desc">{f.desc}</p>
-              </div>
-            </article>
+            <BentoCard key={f.title} f={f} />
           ))}
         </div>
       </div>
     </section>
   );
 }
+

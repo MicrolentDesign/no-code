@@ -33,17 +33,19 @@
 
 /* chip (leading circle icon) sits inset on the left */
 .btn--chip {
-  padding-left: 0.4rem;
+  padding-left: 0.45rem;
+  padding-right: 1.4rem;
 }
 .btn__chip {
   display: grid;
   place-items: center;
-  width: calc(var(--h) - 12px);
-  height: calc(var(--h) - 12px);
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  background: var(--brand);
+  background: rgba(255, 255, 255, 0.2);
   color: #fff;
   flex: none;
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
 /* ---- variants ---- */
@@ -55,6 +57,10 @@
 .btn--brand:hover {
   box-shadow: var(--shadow-brand);
   transform: translateY(-2px);
+}
+.btn--brand .btn__chip {
+  background: rgba(255, 255, 255, 0.22);
+  color: #fff;
 }
 
 .btn--dark {
@@ -81,6 +87,10 @@
   box-shadow: var(--shadow-md);
   border-color: var(--brand);
 }
+.btn--light .btn__chip {
+  background: var(--brand-050);
+  color: var(--brand);
+}
 
 .btn--white {
   background: #fff;
@@ -91,7 +101,8 @@
   transform: translateY(-2px);
 }
 .btn--white .btn__chip {
-  background: var(--brand);
+  background: var(--brand-050);
+  color: var(--brand);
 }
 
 .btn--ghost {
@@ -117,3 +128,20 @@
   background: rgba(255, 255, 255, 0.9);
   color: var(--brand);
 }
+
+@media (max-width: 560px) {
+  .btn--lg {
+    --h: 48px;
+    font-size: 0.92rem;
+    padding-inline: 1.3rem;
+  }
+  .btn--chip {
+    padding-left: 0.4rem;
+    padding-right: 1.2rem;
+  }
+  .btn__chip {
+    width: 32px;
+    height: 32px;
+  }
+}
+

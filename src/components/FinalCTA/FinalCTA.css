@@ -108,3 +108,15 @@
   justify-content: center;
 }
 
+@media (max-width: 560px) {
+  .fcta__buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+  }
+  .fcta__buttons .btn {
+    width: 100%;
+  }
+}
+
+

@@ -91,13 +91,13 @@
     opacity: 0.7;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 560px) {
   .phero {
     padding-top: clamp(100px, 12vh, 130px);
     padding-bottom: clamp(40px, 6vw, 60px);
   }
   .phero__title {
-    font-size: clamp(1.6rem, 7vw, 2.2rem);
+    font-size: clamp(1.65rem, 6.5vw, 2.2rem);
   }
   .phero__sub {
     font-size: 0.95rem;
@@ -105,6 +105,8 @@
   .phero__cta {
     flex-direction: column;
     width: 100%;
+    max-width: 320px;
+    margin-inline: auto;
   }
   .phero__cta .btn {
     width: 100%;
@@ -113,4 +115,5 @@
     display: none;
   }
 }
+
 

@@ -10,7 +10,8 @@
   transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
 }
 .feat-card:hover,
-.feat-card:focus-visible {
+.feat-card:focus-visible,
+.feat-card.is-active-center {
   transform: translateY(-5px);
   box-shadow: var(--shadow-brand);
   border-color: transparent;
@@ -36,7 +37,8 @@
   mask-image: radial-gradient(120% 90% at 100% 0%, #000 30%, transparent 75%);
 }
 .feat-card:hover .feat-card__bg,
-.feat-card:focus-visible .feat-card__bg {
+.feat-card:focus-visible .feat-card__bg,
+.feat-card.is-active-center .feat-card__bg {
   opacity: 1;
 }
 
@@ -54,7 +56,8 @@
   transition: background 0.4s ease, color 0.4s ease;
 }
 .feat-card:hover .feat-card__icon,
-.feat-card:focus-visible .feat-card__icon {
+.feat-card:focus-visible .feat-card__icon,
+.feat-card.is-active-center .feat-card__icon {
   background: rgba(255, 255, 255, 0.18);
   color: #fff;
 }
@@ -68,7 +71,8 @@
   transition: color 0.4s ease;
 }
 .feat-card:hover .feat-card__title,
-.feat-card:focus-visible .feat-card__title {
+.feat-card:focus-visible .feat-card__title,
+.feat-card.is-active-center .feat-card__title {
   color: #fff;
 }
 
@@ -81,6 +85,8 @@
   transition: color 0.4s ease;
 }
 .feat-card:hover .feat-card__desc,
-.feat-card:focus-visible .feat-card__desc {
+.feat-card:focus-visible .feat-card__desc,
+.feat-card.is-active-center .feat-card__desc {
   color: rgba(255, 255, 255, 0.88);
 }
+
