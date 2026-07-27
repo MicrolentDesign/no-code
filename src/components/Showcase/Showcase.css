@@ -84,6 +84,9 @@
   box-shadow: var(--shadow-md);
   min-height: 260px;
   display: flex;
+  box-sizing: border-box;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 /* ===== mockups ===== */
@@ -97,6 +100,8 @@
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 .mk-tag {
   font-size: 0.7rem;
@@ -272,9 +277,50 @@
   .srow,
   .srow--rev {
     grid-template-columns: 1fr;
-    gap: 1.6rem;
+    gap: 1.4rem;
+    top: calc(96px + var(--i, 0) * 10px);
   }
   .srow--rev .srow__text {
     order: 0;
   }
 }
+@media (max-width: 640px) {
+  .srow {
+    padding: 1.2rem 0.9rem;
+  }
+  .srow__mock {
+    padding: 0.75rem;
+    min-height: auto;
+  }
+  .mk {
+    padding: 0.75rem;
+    gap: 0.65rem;
+  }
+  .mk-stats {
+    gap: 0.3rem;
+  }
+  .mk-stat {
+    padding: 0.4rem 0.35rem;
+    gap: 0.25rem;
+  }
+  .mk-stat__ic {
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+  }
+  .mk-stat__l {
+    font-size: 0.55rem;
+  }
+  .mk-stat__v {
+    font-size: 0.72rem;
+  }
+  .srow__tags {
+    gap: 0.4rem;
+    margin-top: 1rem;
+  }
+  .srow__tag {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.76rem;
+  }
+}
+
