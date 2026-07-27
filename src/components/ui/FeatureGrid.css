@@ -1,6 +1,6 @@
 .feat-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(var(--grid-cols, 3), 1fr);
   gap: 1.15rem;
 }
 
@@ -14,3 +14,4 @@
     grid-template-columns: 1fr;
   }
 }
+

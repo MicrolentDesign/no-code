@@ -2,9 +2,9 @@ import "./FinalCTA.css";
 import Button from "../ui/Button";
 import Icon from "../ui/Icon";
 import Reveal from "../ui/Reveal";
-import { finalCta } from "../../data/content";
+import { finalCta as defaultData } from "../../data/content";
 
-export default function FinalCTA() {
+export default function FinalCTA({ data = defaultData }) {
   return (
     <section className="fcta section">
       <div className="container">
@@ -13,7 +13,7 @@ export default function FinalCTA() {
           <span className="fcta__wave fcta__wave--2" aria-hidden="true" />
 
           <div className="fcta__avatars" aria-hidden="true">
-            {finalCta.avatars.map((src, i) => (
+            {(data.avatars || defaultData.avatars).map((src, i) => (
               <span className="fcta__av" key={i}>
                 <img src={src} alt="" loading="lazy" />
               </span>
@@ -21,14 +21,23 @@ export default function FinalCTA() {
           </div>
 
           <h2 className="fcta__title">
-            {finalCta.titleLead} <span className="tmuted">{finalCta.titleMuted}</span>
+            {data.titleLead} <span className="tmuted">{data.titleMuted}</span>
           </h2>
-          <p className="fcta__sub">{finalCta.subtitle}</p>
-          <Button variant="brand" size="lg" href="#" chip={<Icon name="ArrowRight" size={16} />}>
-            {finalCta.cta}
-          </Button>
+          <p className="fcta__sub">{data.subtitle}</p>
+
+          <div className="fcta__buttons">
+            <Button variant="brand" size="lg" href="#" chip={<Icon name="ArrowRight" size={16} />}>
+              {data.cta}
+            </Button>
+            {data.ctaSecondary && (
+              <Button variant="light" size="lg" href="#">
+                {data.ctaSecondary}
+              </Button>
+            )}
+          </div>
         </Reveal>
       </div>
     </section>
   );
 }
+

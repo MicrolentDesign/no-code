@@ -2,9 +2,9 @@ import { useState } from "react";
 import "./FAQ.css";
 import Icon from "../ui/Icon";
 import Reveal from "../ui/Reveal";
-import { faq } from "../../data/content";
+import { faq as defaultFaq } from "../../data/content";
 
-export default function FAQ() {
+export default function FAQ({ data = defaultFaq }) {
   const [open, setOpen] = useState(0);
 
   return (
@@ -13,16 +13,16 @@ export default function FAQ() {
         <Reveal className="faq__left">
           <span className="faq__eyebrow">
             <i />
-            {faq.eyebrow}
+            {data.eyebrow}
           </span>
           <h2 className="faq__title">
-            {faq.titleLead} <span className="tmuted">{faq.titleAccent}</span>
+            {data.titleLead} <span className="tmuted">{data.titleAccent}</span>
           </h2>
-          <p className="faq__sub">Here's what most new traders want to know before getting started.</p>
+          <p className="faq__sub">{data.subtitle || "Here's what most new traders want to know before getting started."}</p>
         </Reveal>
 
         <div className="faq__list">
-          {faq.items.map((it, i) => {
+          {data.items.map((it, i) => {
             const isOpen = open === i;
             return (
               <Reveal
@@ -54,3 +54,4 @@ export default function FAQ() {
     </section>
   );
 }
+

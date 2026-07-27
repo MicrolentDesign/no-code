@@ -32,9 +32,9 @@
   margin-inline: auto;
 }
 .nav__link {
-  padding: 0.5rem 0.9rem;
+  padding: 0.5rem 0.7rem;
   border-radius: var(--r-pill);
-  font-size: 0.94rem;
+  font-size: 0.9rem;
   font-weight: 450;
   color: var(--text);
   transition: color 0.2s ease, background 0.2s ease;
@@ -79,6 +79,15 @@
   display: none;
 }
 
+@media (max-width: 1060px) {
+  .nav__link {
+    padding: 0.45rem 0.5rem;
+    font-size: 0.84rem;
+  }
+  .nav__links {
+    gap: 0.1rem;
+  }
+}
 @media (max-width: 920px) {
   .nav__links,
   .nav__login,

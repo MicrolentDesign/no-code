@@ -1,10 +1,15 @@
 import { Routes, Route } from "react-router-dom";
 import useLenis from "./hooks/useLenis";
 import ScrollManager from "./components/ScrollManager";
+import PageTransition from "./components/PageTransition";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home";
 import Platform from "./pages/Platform";
+import Solutions from "./pages/Solutions";
+import PricingPage from "./pages/PricingPage";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 export default function App() {
   useLenis();
@@ -14,12 +19,20 @@ export default function App() {
       <ScrollManager />
       <Navbar />
       <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/platform" element={<Platform />} />
-        </Routes>
+        <PageTransition>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/platform" element={<Platform />} />
+            <Route path="/solutions" element={<Solutions />} />
+            <Route path="/pricing" element={<PricingPage />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </PageTransition>
       </main>
       <Footer />
     </>
   );
 }
+
+

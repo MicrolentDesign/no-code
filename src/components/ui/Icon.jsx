@@ -54,6 +54,23 @@ import {
   Search,
   Repeat,
   HelpCircle,
+  /* marketing pages */
+  Users,
+  Briefcase,
+  Building,
+  Eye,
+  Target,
+  RefreshCw,
+  MapPin,
+  Mail,
+  Phone,
+  MessageSquare,
+  Headphones,
+  Calendar,
+  Award,
+  Shield,
+  Gauge,
+  Sparkles,
 } from "lucide-react";
 
 const MAP = {
@@ -111,6 +128,23 @@ const MAP = {
   GitCompare,
   Search,
   Repeat,
+  /* marketing pages */
+  Users,
+  Briefcase,
+  Building,
+  Eye,
+  Target,
+  RefreshCw,
+  MapPin,
+  Mail,
+  Phone,
+  MessageSquare,
+  Headphones,
+  Calendar,
+  Award,
+  Shield,
+  Gauge,
+  Sparkles,
 };
 
 export default function Icon({ name, size = 20, strokeWidth = 2, ...rest }) {

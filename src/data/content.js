@@ -13,10 +13,10 @@ export const nav = {
   links: [
     { label: "Home", href: "/#home", match: "/" },
     { label: "Platform", href: "/platform", match: "/platform" },
-    { label: "Features", href: "/#features" },
-    { label: "How it works", href: "/#how" },
-    { label: "Pricing", href: "/#pricing" },
-    { label: "FAQ", href: "/#faq" },
+    { label: "Solutions", href: "/solutions", match: "/solutions" },
+    { label: "Pricing", href: "/pricing", match: "/pricing" },
+    { label: "About", href: "/about", match: "/about" },
+    { label: "Contact", href: "/contact", match: "/contact" },
   ],
   cta: { label: "Get Started", href: "#" },
   login: { label: "Log in", href: "#" },
@@ -643,4 +643,260 @@ export const footer = {
   ],
   socials: ["X", "Instagram", "Telegram", "LinkedIn"],
   copyright: "© 2026 Quantly. All rights reserved.",
+};
+
+/* =============================================================
+   Solutions page
+   ============================================================= */
+export const solutions = {
+  hero: {
+    eyebrow: "Solutions",
+    titleLead: "Trading Workflows Built Around",
+    titleMuted: "Every Type of Trader",
+    subtitle:
+      "Whether you're exploring algorithmic trading for the first time or managing multiple trading strategies, the platform adapts to your workflow with intuitive tools designed for every stage of your trading journey.",
+    cta: "Explore Platform",
+    demo: "Book a Demo",
+  },
+
+  audiences: [
+    {
+      icon: "Users",
+      title: "Individual Traders",
+      desc: "Build, validate and improve trading strategies without writing code. Ideal for traders looking to automate repetitive analysis while maintaining complete control.",
+    },
+    {
+      icon: "Briefcase",
+      title: "Professional Traders",
+      desc: "Accelerate research, compare strategies and optimise decision-making using advanced visual workflows. Designed for traders who need speed and flexibility.",
+    },
+    {
+      icon: "Building",
+      title: "Trading Teams",
+      desc: "Collaborate around consistent trading processes with reusable strategy templates and centralised reporting. Ideal for firms managing multiple trading workflows.",
+    },
+  ],
+
+  whyTeams: {
+    eyebrow: "Why Teams Choose Us",
+    titleLead: "A Unified Platform for",
+    titleMuted: "Every Trading Workflow",
+    desc: "From strategy creation to performance analysis, the platform brings together the tools your team needs in one connected workspace.",
+    highlights: [
+      "Visual workflows",
+      "Consistent processes",
+      "Scalable architecture",
+      "Unified platform",
+    ],
+  },
+
+  workflow: {
+    title: "From Idea to Insight in Five Steps",
+    steps: [
+      { icon: "Search", title: "Discover" },
+      { icon: "Blocks", title: "Build" },
+      { icon: "CheckCircle", title: "Validate" },
+      { icon: "Rocket", title: "Trade" },
+      { icon: "BarChart3", title: "Analyse" },
+    ],
+  },
+
+  benefits: [
+    { icon: "Blocks", title: "No Coding", desc: "Build strategies visually without writing a single line of code." },
+    { icon: "Eye", title: "Visual Builder", desc: "Design entry, exit, and risk logic through an intuitive drag-and-drop interface." },
+    { icon: "History", title: "Historical Validation", desc: "Backtest strategies against years of market data before risking real capital." },
+    { icon: "Activity", title: "Paper Trading", desc: "Simulate strategies using virtual capital in live market conditions." },
+    { icon: "Link2", title: "Broker Connectivity", desc: "Connect your brokerage account and manage workflows from one place." },
+    { icon: "BarChart3", title: "Performance Analytics", desc: "Review strategy outcomes through detailed reports and visual dashboards." },
+  ],
+
+  cta: {
+    titleLead: "Start Building Smarter",
+    titleMuted: "Trading Workflows",
+    subtitle: "Join thousands of traders who build, test, and execute — all without code.",
+    cta: "Get Started",
+    ctaSecondary: "Book a Demo",
+  },
+};
+
+/* =============================================================
+   Pricing page
+   ============================================================= */
+export const pricingPage = {
+  hero: {
+    eyebrow: "Pricing",
+    titleLead: "Simple Pricing for Every Stage of",
+    titleMuted: "Your Trading Journey",
+    subtitle:
+      "Choose a plan that matches your trading workflow and upgrade as your requirements evolve.",
+    cta: "Start Free Trial",
+    demo: "Talk to Sales",
+  },
+
+  comparison: {
+    plans: [{ name: "Starter" }, { name: "Professional" }, { name: "Enterprise" }],
+    rows: [
+      { feature: "Strategy Builder", cells: [true, true, true] },
+      { feature: "Backtesting", cells: ["Basic", "Advanced", "Advanced"] },
+      { feature: "Paper Trading", cells: [true, true, true] },
+      { feature: "Live Trading", cells: [false, true, true] },
+      { feature: "Market Scanner", cells: [false, true, true] },
+      { feature: "Broker Integration", cells: ["1 broker", "All brokers", "All brokers"] },
+      { feature: "Analytics", cells: ["Basic", "Advanced", "Advanced"] },
+      { feature: "Support", cells: ["Community", "Priority", "Dedicated"] },
+      { feature: "API Access", cells: [false, false, true] },
+      { feature: "Future Features", cells: [false, "Early access", "Early access"] },
+    ],
+  },
+
+  faq: {
+    eyebrow: "Good to know",
+    titleLead: "Frequently asked",
+    titleAccent: "questions",
+    subtitle: "Answers to common pricing and billing questions.",
+    items: [
+      {
+        q: "Can I change plans?",
+        a: "Yes. You can upgrade or downgrade your plan at any time. Changes take effect at the start of your next billing cycle.",
+      },
+      {
+        q: "Can I cancel anytime?",
+        a: "Absolutely. There are no lock-in contracts. Cancel any time from your account settings and you'll retain access until the end of your current period.",
+      },
+      {
+        q: "Do you offer enterprise pricing?",
+        a: "Yes. For teams with advanced requirements, we offer custom pricing and onboarding. Contact our sales team to discuss your needs.",
+      },
+      {
+        q: "Will new features be included?",
+        a: "All platform updates and new features are included in your subscription at no extra cost.",
+      },
+      {
+        q: "How do subscriptions work?",
+        a: "Choose monthly or yearly billing. Yearly plans include a 20% discount. Payment is processed securely through Stripe.",
+      },
+    ],
+  },
+
+  cta: {
+    titleLead: "Choose the Plan That Fits",
+    titleMuted: "Your Trading Goals",
+    subtitle: "Start free. Upgrade only when your strategies do.",
+    cta: "Get Started",
+    ctaSecondary: "Book a Demo",
+  },
+};
+
+/* =============================================================
+   About page
+   ============================================================= */
+export const about = {
+  hero: {
+    eyebrow: "About Us",
+    titleLead: "Building Better Trading Experiences",
+    titleMuted: "Through Simplicity",
+    subtitle:
+      "We believe professional trading tools should be accessible, intuitive and designed around how traders actually work.",
+    cta: "Explore Platform",
+    demo: "Contact Us",
+  },
+
+  mission: {
+    eyebrow: "Our Mission",
+    titleLead: "Remove Unnecessary Complexity",
+    titleMuted: "from Algorithmic Trading",
+    desc: "We exist to make sophisticated trading strategies accessible to more people by providing visual workflows that replace complex programming with intuitive building blocks.",
+  },
+
+  vision: {
+    eyebrow: "Our Vision",
+    titleLead: "One Connected Experience for",
+    titleMuted: "Strategy, Testing and Execution",
+    desc: "Create a modern trading platform where strategy creation, testing and execution work together seamlessly within one connected experience.",
+  },
+
+  principles: [
+    { icon: "Eye", title: "Clarity", desc: "Every feature is designed to be immediately understandable." },
+    { icon: "Shield", title: "Reliability", desc: "A platform you can depend on for consistent, predictable performance." },
+    { icon: "Target", title: "Transparency", desc: "Clear pricing, honest communication, and no hidden surprises." },
+    { icon: "Gauge", title: "Performance", desc: "Optimised for speed and responsiveness at every interaction." },
+    { icon: "Lock", title: "Security", desc: "Enterprise-grade encryption and permission-scoped API access." },
+    { icon: "Sparkles", title: "Continuous Improvement", desc: "Regular updates driven by trader feedback and market evolution." },
+  ],
+
+  timeline: {
+    eyebrow: "Roadmap",
+    title: "Product Timeline",
+    subtitle: "Where we are and where we're headed.",
+    steps: [
+      { icon: "CheckCircle", title: "Today", desc: "Platform MVP with strategy builder, backtesting, and paper trading." },
+      { icon: "Rocket", title: "Platform MVP", desc: "Full platform launch with broker connectivity and live trading." },
+      { icon: "Link2", title: "Expanded Broker Support", desc: "Additional broker integrations and multi-market coverage." },
+      { icon: "Zap", title: "Advanced Automation", desc: "AI-driven optimisation, signal generation, and automated workflows." },
+      { icon: "Globe", title: "Global Expansion", desc: "Support for international markets, languages, and regulatory frameworks." },
+    ],
+  },
+
+  cta: {
+    titleLead: "Join Us as We Shape the Future of",
+    titleMuted: "Visual Trading",
+    subtitle: "Be part of the journey from day one.",
+    cta: "Get Started",
+    ctaSecondary: "Book a Demo",
+  },
+};
+
+/* =============================================================
+   Contact page
+   ============================================================= */
+export const contact = {
+  hero: {
+    eyebrow: "Contact",
+    titleLead: "Let's Start",
+    titleMuted: "the Conversation",
+    subtitle:
+      "Whether you have a question about the platform, pricing or implementation, we're here to help.",
+    cta: "Send a Message",
+    demo: "Book a Demo",
+  },
+
+  options: [
+    { icon: "Briefcase", title: "Sales", desc: "Speak with our sales team about plans and enterprise pricing." },
+    { icon: "Calendar", title: "Product Demo", desc: "Schedule a personalised walkthrough of the platform." },
+    { icon: "Headphones", title: "Technical Support", desc: "Get help with setup, integrations, or troubleshooting." },
+    { icon: "MessageSquare", title: "General Enquiries", desc: "Any other questions? We'd love to hear from you." },
+  ],
+
+  faq: {
+    eyebrow: "Good to know",
+    titleLead: "Frequently asked",
+    titleAccent: "questions",
+    subtitle: "Quick answers to common contact questions.",
+    items: [
+      {
+        q: "How quickly can I expect a response?",
+        a: "We aim to respond to all enquiries within one business day. Priority support customers receive faster response times.",
+      },
+      {
+        q: "Can I schedule a demo?",
+        a: "Yes. Click 'Book a Demo' to select a convenient time for a personalised walkthrough with our product team.",
+      },
+      {
+        q: "Do you provide onboarding?",
+        a: "All paid plans include onboarding support. Enterprise customers receive dedicated onboarding with a success manager.",
+      },
+      {
+        q: "Do you support enterprise customers?",
+        a: "Absolutely. We offer custom pricing, dedicated support, and tailored onboarding for enterprise teams. Contact sales to learn more.",
+      },
+    ],
+  },
+
+  cta: {
+    titleLead: "Ready to Explore",
+    titleMuted: "the Platform?",
+    subtitle: "Get started for free or book a personalised demo.",
+    cta: "Get Started",
+    ctaSecondary: "Book a Demo",
+  },
 };
