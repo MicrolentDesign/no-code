@@ -41,9 +41,9 @@ export default function Navbar() {
         </nav>
 
         <div className="nav__actions">
-          <a href={nav.login.href} className="nav__login">
+          <Link to={nav.login.href} className="nav__login">
             {nav.login.label}
-          </a>
+          </Link>
           <Button variant="brand" size="sm" href={nav.cta.href}>
             {nav.cta.label}
           </Button>

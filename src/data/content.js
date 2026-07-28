@@ -18,8 +18,8 @@ export const nav = {
     { label: "About", href: "/about", match: "/about" },
     { label: "Contact", href: "/contact", match: "/contact" },
   ],
-  cta: { label: "Get Started", href: "#" },
-  login: { label: "Log in", href: "#" },
+  cta: { label: "Get Started", href: "/pricing" },
+  login: { label: "Log in", href: "/contact" },
 };
 
 export const hero = {

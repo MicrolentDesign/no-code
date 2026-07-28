@@ -34,10 +34,10 @@ export default function PlatformHero({ data }) {
         <p className="phero__sub">{data.subtitle}</p>
 
         <div className="phero__cta">
-          <Button variant="brand" size="lg" href="#" chip={<Icon name="ArrowRight" size={16} />}>
+          <Button variant="brand" size="lg" href="/pricing" chip={<Icon name="ArrowRight" size={16} />}>
             {data.cta}
           </Button>
-          <Button variant="light" size="lg" href="#" chip={<Icon name="Play" size={14} />}>
+          <Button variant="light" size="lg" href="/contact" chip={<Icon name="Play" size={14} />}>
             {data.demo}
           </Button>
         </div>

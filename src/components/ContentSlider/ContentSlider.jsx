@@ -75,7 +75,7 @@ export default function ContentSlider() {
             </span>
             <h3 className="cslider__stitle">{s.title}</h3>
             <p className="cslider__sdesc">{s.desc}</p>
-            <Button variant="brand" href="#" chip={<Icon name="ArrowRight" size={16} />}>
+            <Button variant="brand" href="/pricing" chip={<Icon name="ArrowRight" size={16} />}>
               {s.cta}
             </Button>
           </div>

@@ -15,7 +15,7 @@ export default function FinalCTA({ data = defaultData }) {
           <div className="fcta__avatars" aria-hidden="true">
             {(data.avatars || defaultData.avatars).map((src, i) => (
               <span className="fcta__av" key={i}>
-                <img src={src} alt="" loading="lazy" />
+                <img src={src} alt="Quantly user avatar" loading="lazy" />
               </span>
             ))}
           </div>
@@ -26,11 +26,11 @@ export default function FinalCTA({ data = defaultData }) {
           <p className="fcta__sub">{data.subtitle}</p>
 
           <div className="fcta__buttons">
-            <Button variant="brand" size="lg" href="#" chip={<Icon name="ArrowRight" size={16} />}>
+            <Button variant="brand" size="lg" href="/pricing" chip={<Icon name="ArrowRight" size={16} />}>
               {data.cta}
             </Button>
             {data.ctaSecondary && (
-              <Button variant="light" size="lg" href="#">
+              <Button variant="light" size="lg" href="/contact">
                 {data.ctaSecondary}
               </Button>
             )}

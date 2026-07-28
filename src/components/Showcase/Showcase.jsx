@@ -19,7 +19,7 @@ export default function Showcase() {
           <h2 className="showcase__title">
             {showcase.titleLead} <span className="tmuted">{showcase.titleMuted}</span>
           </h2>
-          <Button variant="brand" href="#" chip={<Icon name="ArrowRight" size={16} />}>
+          <Button variant="brand" href="/pricing" chip={<Icon name="ArrowRight" size={16} />}>
             {showcase.cta}
           </Button>
         </Reveal>

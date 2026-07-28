@@ -15,9 +15,6 @@ export default function Hero({ data = defaultHero, widgets, sectionId = "home" }
       {/* light aurora background + optional looping video
           (drop a file at /public/assets/hero-bg.mp4 to enable it) */}
       <div className="hero__bg" aria-hidden="true">
-        <video className="hero__video" autoPlay muted loop playsInline poster="">
-          <source src="/assets/hero-bg.mp4" type="video/mp4" />
-        </video>
         <span className="hero__rays" />
         <span className="hero__glow" />
       </div>
@@ -39,10 +36,10 @@ export default function Hero({ data = defaultHero, widgets, sectionId = "home" }
         <p className="hero__sub">{data.subtitle}</p>
 
         <div className="hero__cta">
-          <Button variant="brand" size="lg" href="#" chip={<Icon name="ArrowRight" size={16} />}>
+          <Button variant="brand" size="lg" href="/pricing" chip={<Icon name="ArrowRight" size={16} />}>
             {data.cta}
           </Button>
-          <Button variant="light" size="lg" href="#" chip={<Icon name="Play" size={14} />}>
+          <Button variant="light" size="lg" href="/contact" chip={<Icon name="Play" size={14} />}>
             {data.demo}
           </Button>
         </div>

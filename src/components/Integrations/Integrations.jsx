@@ -13,7 +13,7 @@ export default function Integrations() {
             {integrations.titleLead} <span className="tmuted">{integrations.titleMuted}</span>
           </h2>
           <p className="integ__sub">{integrations.subtitle}</p>
-          <Button variant="brand" href="#" chip={<Icon name="ArrowRight" size={16} />}>
+          <Button variant="brand" href="/platform#broker" chip={<Icon name="ArrowRight" size={16} />}>
             {integrations.cta}
           </Button>
         </Reveal>

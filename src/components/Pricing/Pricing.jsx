@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import "./Pricing.css";
 import Icon from "../ui/Icon";
@@ -27,10 +28,10 @@ function PricingPlan({ p, i, yearly }) {
           <span className="plan__per">/{period}</span>
         </div>
       </div>
-      <a href="#" className={`plan__cta ${p.featured ? "plan__cta--solid" : ""}`}>
+      <Link to={`/contact?plan=${encodeURIComponent(p.name)}`} className={`plan__cta ${p.featured ? "plan__cta--solid" : ""}`}>
         {p.cta}
         <Icon name="ArrowRight" size={16} />
-      </a>
+      </Link>
       <ul className="plan__feats">
         {p.features.map((f) => (
           <li key={f}>

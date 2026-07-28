@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import "./ContactForm.css";
 import Button from "./Button";
 import Icon from "./Icon";
@@ -10,7 +11,10 @@ const COUNTRIES = [
 ];
 
 export default function ContactForm() {
+  const [searchParams] = useSearchParams();
+  const planParam = searchParams.get("plan");
   const [submitted, setSubmitted] = useState(false);
+  const [subject, setSubject] = useState(planParam ? `Enquiry regarding ${planParam} plan` : "");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,6 +29,11 @@ export default function ContactForm() {
         </span>
         <h3>Thank you for reaching out</h3>
         <p>We've received your message and will get back to you shortly.</p>
+        <div style={{ marginTop: "1.5rem" }}>
+          <Button variant="light" size="sm" onClick={() => setSubmitted(false)}>
+            Send another message
+          </Button>
+        </div>
       </Reveal>
     );
   }
@@ -56,8 +65,8 @@ export default function ContactForm() {
       <div className="cform__row">
         <label className="cform__field">
           <span className="cform__label">Country <span className="cform__req">*</span></span>
-          <select name="country" required className="cform__input cform__select">
-            <option value="">Select country</option>
+          <select name="country" required className="cform__input cform__select" defaultValue="">
+            <option value="" disabled>Select country</option>
             {COUNTRIES.map((c) => (
               <option key={c} value={c}>{c}</option>
             ))}
@@ -65,7 +74,15 @@ export default function ContactForm() {
         </label>
         <label className="cform__field">
           <span className="cform__label">Subject <span className="cform__req">*</span></span>
-          <input type="text" name="subject" required className="cform__input" placeholder="Product enquiry" />
+          <input
+            type="text"
+            name="subject"
+            required
+            className="cform__input"
+            placeholder="Product enquiry"
+            value={subject}
+            onChange={(e) => setSubject(e.target.value)}
+          />
         </label>
       </div>
 
@@ -79,7 +96,7 @@ export default function ContactForm() {
         <span>I agree to receive communications from Quantly. You can unsubscribe at any time.</span>
       </label>
 
-      <Button variant="brand" size="lg" className="cform__submit" chip={<Icon name="Send" size={16} />}>
+      <Button type="submit" variant="brand" size="lg" className="cform__submit" chip={<Icon name="Send" size={16} />}>
         Send Message
       </Button>
     </Reveal>

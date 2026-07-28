@@ -39,7 +39,7 @@ export default function Steps() {
               {steps.titleLead} <span className="tmuted">{steps.titleMuted}</span>
             </h2>
             <p className="steps__sub">{steps.subtitle}</p>
-            <Button variant="brand" href="#" chip={<Icon name="ArrowRight" size={16} />}>
+            <Button variant="brand" href="/pricing" chip={<Icon name="ArrowRight" size={16} />}>
               {steps.cta}
             </Button>
           </div>

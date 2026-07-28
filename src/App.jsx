@@ -10,6 +10,7 @@ import Solutions from "./pages/Solutions";
 import PricingPage from "./pages/PricingPage";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
   useLenis();
@@ -27,6 +28,7 @@ export default function App() {
             <Route path="/pricing" element={<PricingPage />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </PageTransition>
       </main>

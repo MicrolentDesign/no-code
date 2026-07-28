@@ -20,10 +20,10 @@ export default function Benefits() {
             </h2>
             <p className="benefits__sub">{benefits.subtitle}</p>
             <div className="benefits__cta">
-              <Button variant="white" href="#" chip={<Icon name="ArrowRight" size={16} />}>
+              <Button variant="white" href="/pricing" chip={<Icon name="ArrowRight" size={16} />}>
                 {benefits.ctaPrimary}
               </Button>
-              <Button variant="glass" href="#" chip={<Icon name="Play" size={14} />}>
+              <Button variant="glass" href="/contact" chip={<Icon name="Play" size={14} />}>
                 {benefits.ctaSecondary}
               </Button>
             </div>

@@ -22,7 +22,13 @@ export default function Footer() {
             <p className="footer__blurb">{footer.blurb}</p>
             <div className="footer__socials">
               {footer.socials.map((s) => (
-                <a key={s} href="#" aria-label={s} className="footer__social">
+                <a
+                  key={s}
+                  href="#"
+                  onClick={(e) => e.preventDefault()}
+                  aria-label={`Visit our ${s} page`}
+                  className="footer__social"
+                >
                   <Icon name={SOCIAL_ICON[s] || "Globe"} size={18} />
                 </a>
               ))}
@@ -34,18 +40,11 @@ export default function Footer() {
               <div className="footer__col" key={c.title}>
                 <h4>{c.title}</h4>
                 <ul>
-                  {c.links.map((l) => {
-                    const isHash = typeof l.href === "string" && l.href.includes("#");
-                    return (
-                      <li key={l.label}>
-                        {isHash ? (
-                          <a href={l.href}>{l.label}</a>
-                        ) : (
-                          <Link to={l.href}>{l.label}</Link>
-                        )}
-                      </li>
-                    );
-                  })}
+                  {c.links.map((l) => (
+                    <li key={l.label}>
+                      <Link to={l.href}>{l.label}</Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
             ))}
